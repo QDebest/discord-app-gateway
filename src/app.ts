@@ -1,4 +1,6 @@
 ﻿import Fastify from "fastify";
+import {translationRoutes} from "./routes/translationRoutes";
+
 
 /**
  *
@@ -13,6 +15,6 @@ export function buildApp() {
       status: "ok",
     };
   });
-
+  app.register(translationRoutes)
   return app;
 }
