@@ -1,11 +1,11 @@
-﻿const Translation_URL = "http://localhost:3001";
+﻿import { config } from "../config/config.js";
 
 interface TranslationResponse {
   translation: string;
 }
 export async function getTranslationHealth() {
   const response = await fetch(
-    `${Translation_URL}/health`
+    `${config.translationURL}/health`
   );
 
   return await response.json();
@@ -13,7 +13,7 @@ export async function getTranslationHealth() {
 
 export async function translate(text: string): Promise<TranslationResponse> {
   const response = await fetch(
-    `${Translation_URL}/translation/translate`,
+    `${config.translationURL}/translation/translate`,
     {
       method: "POST",
       headers: {

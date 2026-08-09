@@ -1,7 +1,7 @@
 {
   "name": "gateway",
   "version": "0.1.0",
-  "packageManager": "yarn@4.14.1",
+  "packageManager": "yarn@4.18.0",
   "dependencies": {
     "fastify": "^5.11.2"
   },
@@ -11,8 +11,8 @@
     "typescript": "^7.0.2"
   },
   "scripts": {
-    "dev": "tsx watch src/server.ts",
+    "dev": "node --env-file=.env --import=tsx --watch src/server.ts",
     "build": "tsc",
-    "start": "node dist/server.js"
+    "start": "node --env-file=.env dist/server.js"
   }
 }
